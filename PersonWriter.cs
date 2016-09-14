@@ -10,7 +10,7 @@ namespace GRAssignment.IO
 {
   public static class PersonWriter
   {
-    public static void WriteFile(List<Person> persons)
+    public static void WriteToConsole(List<Person> persons)
     {
       foreach(var person in persons)
       {
