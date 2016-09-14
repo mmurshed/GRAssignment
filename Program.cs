@@ -14,17 +14,22 @@ namespace GRAssignment.Program
     {
       if (args.Length < 1)
         return;
+
       var persons = PersonReader.ReadFile(args[0], ',');
+
       persons.Sort(new GenderComparer());
-      Console.WriteLine("Gender Sort: Female first, then last name ascending.");
+      Console.WriteLine("Sorted by Gender, Female first, then last name ascending.");
+      Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);
 
-      persons.Sort(new BirthDateComparer());
-      Console.WriteLine("Birth Date Sort Ascending.");
+      persons.Sort( (x, y) => -1 * x.DateOfBirth.CompareTo(y.DateOfBirth) );
+      Console.WriteLine("Sorted by Birth Date, Ascending.");
+      Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);
 
-      persons.Sort(new LastNameComparer());
-      Console.WriteLine("Last Name Sort Descending.");
+      persons.Sort( (x,y) => -1 * x.LastName.CompareTo(y.LastName) );
+      Console.WriteLine("Sorted by Last Name, Descending.");
+      Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);
     }
   }

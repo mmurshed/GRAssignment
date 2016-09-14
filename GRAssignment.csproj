@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LastNameComparer.cs" />
-    <Compile Include="BirthDateComparer.cs" />
     <Compile Include="GenderComparer.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonWriter.cs" />
