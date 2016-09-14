@@ -26,8 +26,8 @@ namespace GRAssignment.IO
         persons.Add(person);
       }
       reader.Close();
-  
-      return persons
+
+      return persons;
     }
   }
 }
