@@ -10,7 +10,7 @@ namespace GRAssignment.DataStructure
   {
     public string LastName { get; private set; }
     public string FirstName { get; private set; }
-    public string Gender { get; private set; }
+    public GenderType Gender { get; private set; }
     public string FavoriteColor { get; private set; }
 
     public DateTime DateOfBirth { get; private set; }
@@ -19,9 +19,11 @@ namespace GRAssignment.DataStructure
     {
       this.LastName = LastName;
       this.FirstName = FirstName;
-      this.Gender = Gender;
+      this.Gender = Gender.CompareTo(GenderType.Male.ToString()) == 0? GenderType.Male : GenderType.Female;
       this.FavoriteColor = FavoriteColor;
       this.DateOfBirth = DateOfBirth;
     }
   }
+
+  public enum GenderType {Male, Female}
 }
