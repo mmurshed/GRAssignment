@@ -10,7 +10,7 @@ namespace GRAssignment.DataStructure
   {
     public int Compare(Person x, Person y)
     {
-      return x.LastName.CompareTo(y.LastName);
+      return -1 * x.LastName.CompareTo(y.LastName);
     }
   }
 }
