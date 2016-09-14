@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GRAssignment.DataStructure;
+using GRAssignment.ConsoleApp.DataStructure;
 using System.IO;
 
-namespace GRAssignment.IO
+namespace GRAssignment.ConsoleApp.IO
 {
   public static class PersonReader
   {

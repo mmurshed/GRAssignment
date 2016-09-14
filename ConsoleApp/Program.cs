@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GRAssignment.IO;
-using GRAssignment.DataStructure;
+using GRAssignment.ConsoleApp.IO;
+using GRAssignment.ConsoleApp.DataStructure;
 
-namespace GRAssignment.Program
+namespace GRAssignment.ConsoleApp.Program
 {
   class Program
   {

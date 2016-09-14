@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRAssignment", "GRAssignment.csproj", "{FA55563B-8C9A-4966-A49D-FD7158F4C5F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRAssignment", "ConsoleApp\ConsoleApp.csproj", "{FA55563B-8C9A-4966-A49D-FD7158F4C5F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

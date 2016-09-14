@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GRAssignment.DataStructure;
-using System.IO;
+using GRAssignment.ConsoleApp.DataStructure;
 
-namespace GRAssignment.IO
+namespace GRAssignment.ConsoleApp.IO
 {
   public static class PersonWriter
   {
