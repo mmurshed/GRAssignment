@@ -18,8 +18,16 @@ namespace GRAssignment.ConsoleApp.IO
         var line = reader.ReadLine();
         var values = line.Split(delimeter);
 
-        Person person = new Person(values[0].Trim(), values[1].Trim(),
-          values[2].Trim(), values[3].Trim(), Convert.ToDateTime(values[4].Trim()) );
+        if (values.Length < 5)
+          continue;
+
+        Person person = new Person(
+          LastName:values[0].Trim(),
+          FirstName:values[1].Trim(),
+          Gender:values[2].Trim(),
+          FavoriteColor:values[3].Trim(),
+          DateOfBirth:Convert.ToDateTime(values[4].Trim())
+        );
         persons.Add(person);
       }
       reader.Close();
