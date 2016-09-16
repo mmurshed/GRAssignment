@@ -9,6 +9,8 @@ namespace GRAssignment.ConsoleApp.NUnit
   public class ConsoleAppTest
   {
     [TestCase(@"C:\Source\GRAssignment\Input\001.csv", ',', @"C:\Source\GRAssignment\Expected\001.csv")]
+    [TestCase(@"C:\Source\GRAssignment\Input\001s.txt", ' ', @"C:\Source\GRAssignment\Expected\001.csv")]
+    [TestCase(@"C:\Source\GRAssignment\Input\001p.txt", '|', @"C:\Source\GRAssignment\Expected\001.csv")]
     public void TestGenderSort(string inputFile, char separator, string expectedFile)
     {
       var persons = PersonReader.ReadFile(inputFile, separator);
