@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using GRAssignment.ConsoleApp.DataStructure;
 using GRAssignment.ConsoleApp.IO;
+using Newtonsoft.Json;
 
 namespace GRAssignment.GRPersonService
 {
@@ -59,23 +60,15 @@ namespace GRAssignment.GRPersonService
       }
       else if (pathSegments[3].Equals("birthdate"))
       {
-        persons.Sort((x, y) => -1 * x.DateOfBirth.CompareTo(y.DateOfBirth));
+        persons.Sort((x, y) => -1 * x.DOB.CompareTo(y.DOB));
       }
       else if (pathSegments[3].Equals("name"))
       {
         persons.Sort((x, y) => -1 * x.LastName.CompareTo(y.LastName));
       }
 
-      MemoryStream memoryStream = new MemoryStream();
-      DataContractJsonSerializer dcSer = new DataContractJsonSerializer(typeof(List<Person>));
-
-      dcSer.WriteObject(memoryStream, persons);
-
-      memoryStream.Position = 0;
-      StreamReader sr = new StreamReader(memoryStream);
-      var serializedString = sr.ReadToEnd();
       context.Response.ContentType = "application/json";
-      context.Response.Write(serializedString);
+      context.Response.Write(JsonConvert.SerializeObject(persons));
     }
 
     private List<Person> GetPersons()

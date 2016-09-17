@@ -26,7 +26,7 @@ namespace GRAssignment.ConsoleApp.IO
           FirstName:values[1].Trim(),
           Gender:values[2].Trim(),
           FavoriteColor:values[3].Trim(),
-          DateOfBirth:Convert.ToDateTime(values[4].Trim())
+          DOB:Convert.ToDateTime(values[4].Trim())
         );
         persons.Add(person);
       }
