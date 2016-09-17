@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.NUnit", "ConsoleApp.NUnit\ConsoleApp.NUnit.csproj", "{0978BDD1-1DE8-4759-99D1-FE408490786C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRRESTAPI", "GRRESTAPI\GRRESTAPI.csproj", "{D71FA173-C166-4F7F-B868-2B99E40EF0D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRPersonService", "GRPersonService\GRPersonService.csproj", "{D71FA173-C166-4F7F-B868-2B99E40EF0D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
