@@ -1,14 +1,20 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace GRAssignment.ConsoleApp.DataStructure
 {
+  [DataContract]
   public class Person : IEquatable<Person>
   {
+    [DataMember]
     public string LastName { get; private set; }
+    [DataMember]
     public string FirstName { get; private set; }
+    [DataMember]
     public GenderType Gender { get; private set; }
+    [DataMember]
     public string FavoriteColor { get; private set; }
-
+    [DataMember]
     public DateTime DateOfBirth { get; private set; }
 
     public Person(string LastName, string FirstName, string Gender, string FavoriteColor, DateTime DateOfBirth)
