@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.NUnit", "ConsoleApp.NUnit\ConsoleApp.NUnit.csproj", "{0978BDD1-1DE8-4759-99D1-FE408490786C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRRESTAPI", "GRRESTAPI\GRRESTAPI.csproj", "{D71FA173-C166-4F7F-B868-2B99E40EF0D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0978BDD1-1DE8-4759-99D1-FE408490786C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0978BDD1-1DE8-4759-99D1-FE408490786C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0978BDD1-1DE8-4759-99D1-FE408490786C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71FA173-C166-4F7F-B868-2B99E40EF0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71FA173-C166-4F7F-B868-2B99E40EF0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71FA173-C166-4F7F-B868-2B99E40EF0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71FA173-C166-4F7F-B868-2B99E40EF0D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
