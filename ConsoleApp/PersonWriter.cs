@@ -32,6 +32,7 @@ namespace GRAssignment.ConsoleApp.IO
 
         file.WriteLine(line);
       }
+      file.Close();
     }
   }
 }

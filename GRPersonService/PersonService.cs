@@ -42,6 +42,12 @@ namespace GRAssignment.GRPersonService
 
     private void CreatePerson(HttpContext context)
     {
+      var data = context.Request["data"];
+      var person = PersonReader.ReadLine(data, ',');
+
+      var persons = GetPersons();
+      persons.Add(person);
+      PersonWriter.WriteToFile(PERSONFILE, persons, ',');
     }
 
     private void GetPersons(HttpContext context)
