@@ -6,10 +6,10 @@ namespace GRAssignment.ConsoleApp.DataStructure
   {
     public int Compare(Person x, Person y)
     {
-      if (x.Gender == y.Gender)
+      if (x.GenderType == y.GenderType)
         return x.LastName.CompareTo(y.LastName);
 
-      if (x.Gender == GenderType.Female && y.Gender == GenderType.Male)
+      if (x.GenderType == GenderType.Female && y.GenderType == GenderType.Male)
         return -1;
       return 1;
     }

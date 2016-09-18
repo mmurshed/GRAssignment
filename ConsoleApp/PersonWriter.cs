@@ -12,8 +12,8 @@ namespace GRAssignment.ConsoleApp.IO
       foreach (var person in persons)
       {
         Console.WriteLine("Name: {0} {1}", person.FirstName, person.LastName);
-        Console.WriteLine("Gender: {0}", person.Gender.ToString());
-        Console.WriteLine("Date of Birth: {0}", person.DateOfBirth.ToString());
+        Console.WriteLine("Gender: {0}", person.Gender);
+        Console.WriteLine("Date of Birth: {0}", person.DOB);
         Console.WriteLine("Favorite Color: {0}", person.FavoriteColor);
         Console.WriteLine();
       }
@@ -26,12 +26,13 @@ namespace GRAssignment.ConsoleApp.IO
       {
         string line = person.LastName + separator;
         line += person.FirstName + separator;
-        line += person.Gender.ToString() + separator;
+        line += person.Gender + separator;
         line += person.FavoriteColor + separator;
-        line += person.DateOfBirth.ToString() + separator;
+        line += person.DateOfBirth + separator;
 
         file.WriteLine(line);
       }
+      file.Close();
     }
   }
 }

@@ -18,7 +18,7 @@ namespace GRAssignment.ConsoleApp.Program
       Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);
 
-      persons.Sort( (x, y) => -1 * x.DateOfBirth.CompareTo(y.DateOfBirth) );
+      persons.Sort( (x, y) => -1 * x.DOB.CompareTo(y.DOB) );
       Console.WriteLine("Sorted by Birth Date, Ascending.");
       Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);
