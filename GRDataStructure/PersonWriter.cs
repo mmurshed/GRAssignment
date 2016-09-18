@@ -5,8 +5,16 @@ using System.IO;
 
 namespace GRAssignment.IO
 {
+  /// <summary>
+  /// A class to write Person object into 
+  /// a delimited file.
+  /// </summary>
   public static class PersonWriter
   {
+    /// <summary>
+    /// Write the Persons collection into the console
+    /// </summary>
+    /// <param name="persons">A collection of Persons</param>
     public static void WriteToConsole(Persons persons)
     {
       foreach (var person in persons.List)
@@ -19,6 +27,12 @@ namespace GRAssignment.IO
       }
     }
 
+    /// <summary>
+    /// Convert a Persons object into a delimited string
+    /// </summary>
+    /// <param name="person">The person object</param>
+    /// <param name="separator">The delimiter</param>
+    /// <returns>String containing the delimited Person records</returns>
     public static string WriteLine(Person person, char separator = ',')
     {
       string line = person.LastName + separator;
@@ -29,6 +43,12 @@ namespace GRAssignment.IO
       return line;
     }
   
+    /// <summary>
+    /// Write a Persons collection into a file
+    /// </summary>
+    /// <param name="fileName">The file name to write to</param>
+    /// <param name="persons">A collection of Persons</param>
+    /// <param name="separator">The delimiter</param>
     public static void WriteToFile(string fileName, Persons persons, char separator = ',')
     {
       var file = new StreamWriter(fileName);

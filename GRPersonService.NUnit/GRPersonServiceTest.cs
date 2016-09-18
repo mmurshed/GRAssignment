@@ -7,8 +7,6 @@ using GRAssignment.IO;
 using System.Net;
 using GRAssignment.DataStructure;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using GRAssignment.GRPersonService;
 
 namespace GRAssignment.GRPersonService.NUnit
 {
@@ -66,7 +64,12 @@ namespace GRAssignment.GRPersonService.NUnit
       File.Copy(@"C:\Source\GRAssignment\Input\persons.bak", PersonService.PERSONFILE, true);
     }
 
-
+    /// <summary>
+    /// Function to deserialze a http stream
+    /// </summary>
+    /// <typeparam name="T">The type name to deserialize</typeparam>
+    /// <param name="stream">The stream to desearilize from</param>
+    /// <returns>The deserialized type</returns>
     public static T Deserialize<T>(Stream stream)
     {
       var serializer = new JsonSerializer();

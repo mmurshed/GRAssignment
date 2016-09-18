@@ -5,6 +5,9 @@ using GRAssignment.IO;
 
 namespace GRAssignment.GRDataStructure.NUnit
 {
+  /// <summary>
+  /// A set of tests to validate the writer
+  /// </summary>
   [TestFixture]
   public class GRDataStructureWriterTest
   {
