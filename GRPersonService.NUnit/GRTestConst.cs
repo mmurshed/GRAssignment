@@ -2,15 +2,19 @@
 
 namespace GRAssignment.GRPersonService.NUnit
 {
+  /// <summary>
+  /// A class containing some constants needed by the test
+  /// </summary>
   public class GRTestConst
   {
+    /// <summary>
+    /// The URI
+    /// </summary>
     public static readonly Uri URL = new Uri("http://localhost/GRPersonService/records/");
-    public const string INPUT_DIR = @"C:\Source\GRAssignment\Input";
-    public const string OUTPUT_DIR = @"C:\Source\GRAssignment\Output";
-    public const string EXPECTED_DIR = @"C:\Source\GRAssignment\Expected";
 
-    public const char COMMA = ',';
-    public const char SPACE = ' ';
-    public const char PIPE = '|';
+    /// <summary>
+    /// The directory containing expected output
+    /// </summary>
+    public const string EXPECTED_DIR = @"C:\Source\GRAssignment\Expected";
   }
 }
