@@ -50,16 +50,16 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="ConsoleAppTest.cs" />
+    <Compile Include="GRDataStructureTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp\ConsoleApp.csproj">
-      <Project>{FA55563B-8C9A-4966-A49D-FD7158F4C5F4}</Project>
-      <Name>ConsoleApp</Name>
+    <ProjectReference Include="..\GRDataStructure\GRDataStructure.csproj">
+      <Project>{097c030e-e755-492b-9d93-02b6ee04ddd0}</Project>
+      <Name>GRDataStructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

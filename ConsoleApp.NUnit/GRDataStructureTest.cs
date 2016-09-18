@@ -6,7 +6,7 @@ using GRAssignment.ConsoleApp.DataStructure;
 namespace GRAssignment.ConsoleApp.NUnit
 {
   [TestFixture]
-  public class ConsoleAppTest
+  public class GRDataStructureTest
   {
     [TestCase(@"C:\Source\GRAssignment\Input\001.csv", ',', @"C:\Source\GRAssignment\Expected\001.csv")]
     [TestCase(@"C:\Source\GRAssignment\Input\001s.txt", ' ', @"C:\Source\GRAssignment\Expected\001.csv")]
