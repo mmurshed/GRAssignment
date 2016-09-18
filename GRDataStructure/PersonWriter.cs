@@ -19,19 +19,21 @@ namespace GRAssignment.IO
       }
     }
 
+    public static string WriteLine(Person person, char separator = ',')
+    {
+      string line = person.LastName + separator;
+      line += person.FirstName + separator;
+      line += person.Gender + separator;
+      line += person.FavoriteColor + separator;
+      line += person.DateOfBirth;
+      return line;
+    }
+  
     public static void WriteToFile(string fileName, Persons persons, char separator = ',')
     {
       var file = new StreamWriter(fileName);
       foreach (var person in persons.List)
-      {
-        string line = person.LastName + separator;
-        line += person.FirstName + separator;
-        line += person.Gender + separator;
-        line += person.FavoriteColor + separator;
-        line += person.DateOfBirth + separator;
-
-        file.WriteLine(line);
-      }
+        file.WriteLine(WriteLine(person, separator));
       file.Close();
     }
   }

@@ -7,7 +7,7 @@ namespace GRAssignment.GRPersonService
 {
   public class PersonService : IHttpHandler
   {
-    private readonly string PERSONFILE = @"C:\Source\GRAssignment\Input\persons.csv";
+    public static readonly string PERSONFILE = @"C:\Source\GRAssignment\Input\persons.csv";
 
     bool IHttpHandler.IsReusable
     {

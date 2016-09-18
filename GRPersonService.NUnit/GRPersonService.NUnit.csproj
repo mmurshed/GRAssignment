@@ -44,6 +44,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\GRDataStructure\GRDataStructure.csproj">
       <Project>{097c030e-e755-492b-9d93-02b6ee04ddd0}</Project>
       <Name>GRDataStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GRPersonService\GRPersonService.csproj">
+      <Project>{D71FA173-C166-4F7F-B868-2B99E40EF0D7}</Project>
+      <Name>GRPersonService</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

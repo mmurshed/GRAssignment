@@ -8,6 +8,7 @@ using System.Net;
 using GRAssignment.DataStructure;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using GRAssignment.GRPersonService;
 
 namespace GRAssignment.GRPersonService.NUnit
 {
@@ -36,6 +37,35 @@ namespace GRAssignment.GRPersonService.NUnit
       // Assert
       Assert.IsTrue(persons.SequenceEqual(personsExpected.List));
     }
+
+    private static object[] TestPerson =
+    {
+      new object[] {new Person(LastName: "Obama", FirstName: "Barak", Gender: "Male", FavoriteColor: "NavyBlue", DateOfBirth: "8/4/1961") }
+    };
+  
+    [TestCaseSource(nameof(TestPerson))]
+    public static void TestPost(Person person)
+    {
+      // Arrange
+      var url = new Uri(GRTestConst.URL, "?data=" + PersonWriter.WriteLine(person, ','));
+      HttpWebRequest POSTRequest = (HttpWebRequest)WebRequest.Create(url);
+      POSTRequest.Method = "POST";
+      POSTRequest.KeepAlive = false;
+      POSTRequest.Timeout = 5000;
+      POSTRequest.ContentLength = 0;
+
+      // Act
+      HttpWebResponse POSTResponse = (HttpWebResponse)POSTRequest.GetResponse();
+
+      // Assert
+      Assert.IsTrue(POSTResponse.StatusCode == HttpStatusCode.OK);
+      var personsExpected = PersonReader.ReadFile(PersonService.PERSONFILE, ',');
+      Assert.AreEqual(person, personsExpected.List[personsExpected.List.Count-1]);
+
+      // Restore data from backup
+      File.Copy(@"C:\Source\GRAssignment\Input\persons.bak", PersonService.PERSONFILE, true);
+    }
+
 
     public static T Deserialize<T>(Stream stream)
     {
