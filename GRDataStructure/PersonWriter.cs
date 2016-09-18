@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using GRAssignment.ConsoleApp.DataStructure;
+using GRAssignment.DataStructure;
 using System.IO;
 
-namespace GRAssignment.ConsoleApp.IO
+namespace GRAssignment.IO
 {
   public static class PersonWriter
   {
-    public static void WriteToConsole(List<Person> persons)
+    public static void WriteToConsole(Persons persons)
     {
-      foreach (var person in persons)
+      foreach (var person in persons.List)
       {
         Console.WriteLine("Name: {0} {1}", person.FirstName, person.LastName);
         Console.WriteLine("Gender: {0}", person.Gender);
@@ -19,10 +19,10 @@ namespace GRAssignment.ConsoleApp.IO
       }
     }
 
-    public static void WriteToFile(string fileName, List<Person> persons, char separator = ',')
+    public static void WriteToFile(string fileName, Persons persons, char separator = ',')
     {
       var file = new StreamWriter(fileName);
-      foreach (var person in persons)
+      foreach (var person in persons.List)
       {
         string line = person.LastName + separator;
         line += person.FirstName + separator;

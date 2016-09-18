@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using GRAssignment.ConsoleApp.DataStructure;
+using GRAssignment.DataStructure;
 using System.IO;
 
-namespace GRAssignment.ConsoleApp.IO
+namespace GRAssignment.IO
 {
   public static class PersonReader
   {
@@ -24,9 +23,9 @@ namespace GRAssignment.ConsoleApp.IO
       return person;
     }
 
-    public static List<Person> ReadFile(string fileName, char delimeter)
+    public static Persons ReadFile(string fileName, char delimeter)
     {
-      List<Person> persons = new List<Person>();
+      var persons = new Persons();
 
       var reader = new StreamReader(File.OpenRead(fileName));
 

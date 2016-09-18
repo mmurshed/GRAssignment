@@ -1,10 +1,10 @@
 ﻿using System;
-using GRAssignment.ConsoleApp.IO;
-using GRAssignment.ConsoleApp.DataStructure;
+using GRAssignment.IO;
+using GRAssignment.DataStructure;
 
-namespace GRAssignment.ConsoleApp.Program
+namespace GRAssignment.ConsoleApp
 {
-  class Program
+  public class Program
   {
     static void Main(string[] args)
     {
@@ -13,17 +13,17 @@ namespace GRAssignment.ConsoleApp.Program
 
       var persons = PersonReader.ReadFile(args[0], ',');
 
-      persons.Sort(new GenderComparer());
+      persons.SortByGender();
       Console.WriteLine("Sorted by Gender, Female first, then last name ascending.");
       Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);
 
-      persons.Sort( (x, y) => -1 * x.DOB.CompareTo(y.DOB) );
+      persons.SortByDateOfBirth();
       Console.WriteLine("Sorted by Birth Date, Ascending.");
       Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);
 
-      persons.Sort( (x,y) => -1 * x.LastName.CompareTo(y.LastName) );
+      persons.SortByLastName();
       Console.WriteLine("Sorted by Last Name, Descending.");
       Console.WriteLine("*********************************************************");
       PersonWriter.WriteToConsole(persons);

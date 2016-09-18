@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace GRAssignment.ConsoleApp.DataStructure
+namespace GRAssignment.DataStructure
 {
   [DataContract]
   public class Person : IEquatable<Person>
