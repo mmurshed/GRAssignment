@@ -6,8 +6,8 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using GRAssignment.ConsoleApp.DataStructure;
-using GRAssignment.ConsoleApp.IO;
+using GRAssignment.DataStructure;
+using GRAssignment.IO;
 using Newtonsoft.Json;
 
 namespace GRAssignment.GRPersonService
@@ -20,6 +20,7 @@ namespace GRAssignment.GRPersonService
     {
         get { return true; }
     }
+
     void IHttpHandler.ProcessRequest(HttpContext context)
     {
       try
@@ -45,7 +46,7 @@ namespace GRAssignment.GRPersonService
       var data = context.Request["data"];
       var person = PersonReader.ReadLine(data, ',');
 
-      var persons = GetPersons();
+      var persons = PersonReader.ReadFile(PERSONFILE, ',');
       persons.Add(person);
       PersonWriter.WriteToFile(PERSONFILE, persons, ',');
     }
@@ -59,27 +60,16 @@ namespace GRAssignment.GRPersonService
       if (pathSegments[2].Equals("records/") == false)
         return;
 
-      var persons = GetPersons();
+      var persons = PersonReader.ReadFile(PERSONFILE, ',');
       if ( pathSegments[3].Equals("gender") )
-      {
-        persons.Sort(new GenderComparer());
-      }
+        persons.SortByGender();
       else if (pathSegments[3].Equals("birthdate"))
-      {
-        persons.Sort((x, y) => -1 * x.DOB.CompareTo(y.DOB));
-      }
+        persons.SortByDateOfBirth();
       else if (pathSegments[3].Equals("name"))
-      {
-        persons.Sort((x, y) => -1 * x.LastName.CompareTo(y.LastName));
-      }
+        persons.SortByLastName();
 
       context.Response.ContentType = "application/json";
       context.Response.Write(JsonConvert.SerializeObject(persons));
-    }
-
-    private List<Person> GetPersons()
-    {
-      return PersonReader.ReadFile(PERSONFILE, ',');
     }
   }
 }

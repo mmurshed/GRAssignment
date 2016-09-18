@@ -50,6 +50,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="GRTestConst.cs" />
+    <Compile Include="GRDataStructureWriterTest.cs" />
     <Compile Include="GRDataStructureTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

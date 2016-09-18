@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GRAssignment.ConsoleApp.DataStructure
+namespace GRAssignment.DataStructure
 {
   public class GenderComparer: IComparer<Person>
   {
