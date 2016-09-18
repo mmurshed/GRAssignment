@@ -13,7 +13,7 @@ namespace GRAssignment.IO
       {
         Console.WriteLine("Name: {0} {1}", person.FirstName, person.LastName);
         Console.WriteLine("Gender: {0}", person.Gender);
-        Console.WriteLine("Date of Birth: {0}", person.DOB);
+        Console.WriteLine("Date of Birth: {0}", person.DateOfBirth);
         Console.WriteLine("Favorite Color: {0}", person.FavoriteColor);
         Console.WriteLine();
       }

@@ -3,7 +3,7 @@ using System.Linq;
 using NUnit.Framework;
 using GRAssignment.IO;
 
-namespace GRAssignment.NUnit
+namespace GRAssignment.GRDataStructure.NUnit
 {
   [TestFixture]
   public class GRDataStructureTest

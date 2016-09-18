@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Runtime.Serialization;
 
 namespace GRAssignment.DataStructure
@@ -6,6 +7,8 @@ namespace GRAssignment.DataStructure
   [DataContract]
   public class Person : IEquatable<Person>
   {
+    public const string DateFormat = "M/d/yyyy";
+ 
     [DataMember]
     public string LastName { get; private set; }
     [DataMember]
@@ -16,17 +19,20 @@ namespace GRAssignment.DataStructure
     [DataMember]
     public string FavoriteColor { get; private set; }
     [DataMember]
-    public string DateOfBirth { get { return DOB.ToString("M/d/yyyy"); } }
+    public string DateOfBirth { get { return DOB.ToString(DateFormat); } }
     public DateTime DOB { get; private set; }
 
-    public Person(string LastName, string FirstName, string Gender, string FavoriteColor, DateTime DOB)
+    public Person(string LastName, string FirstName, string Gender, string FavoriteColor, string DateOfBirth)
     {
       this.LastName = LastName;
       this.FirstName = FirstName;
-      this.GenderType = Gender.CompareTo(GenderType.Male.ToString()) == 0? GenderType.Male : GenderType.Female;
+      this.GenderType = Gender.CompareTo(GenderType.Male.ToString()) == 0 ? GenderType.Male : GenderType.Female;
       this.FavoriteColor = FavoriteColor;
-      this.DOB = DOB;
+      DateTime result = DateTime.Now;
+      DateTime.TryParseExact(DateOfBirth, DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out result);
+      this.DOB = result;
     }
+
     public bool Equals(Person other)
     {
       if (other == null)

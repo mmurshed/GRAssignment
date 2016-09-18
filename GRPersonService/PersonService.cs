@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Json;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
-using GRAssignment.DataStructure;
 using GRAssignment.IO;
 using Newtonsoft.Json;
 
@@ -69,7 +62,7 @@ namespace GRAssignment.GRPersonService
         persons.SortByLastName();
 
       context.Response.ContentType = "application/json";
-      context.Response.Write(JsonConvert.SerializeObject(persons));
+      context.Response.Write(JsonConvert.SerializeObject(persons.List));
     }
   }
 }
