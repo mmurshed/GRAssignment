@@ -2,18 +2,11 @@
 
 namespace GRAssignment.DataStructure
 {
-  public class GenderComparer: IComparer<Person>
+  public class DOBComparer: IComparer<Person>
   {
     public int Compare(Person x, Person y)
     {
-      int compare = 0;
-      if (x.GenderType == y.GenderType)
-        compare = 0; // Samel Gender
-      else if (x.GenderType == GenderType.Female && y.GenderType == GenderType.Male)
-        compare = -1; // Female before Male
-      else
-        compare = 1;
-
+      int compare = x.DOB.CompareTo(y.DOB); // Ascending: Oldest to Newest
       if (compare == 0)
         compare = x.LastName.CompareTo(y.LastName); // Ascending: A to Z
       if (compare == 0)

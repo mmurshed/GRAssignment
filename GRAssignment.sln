@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRDataStructure", "GRDataSt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRDataStructure.NUnit", "GRDataStructure.NUnit\GRDataStructure.NUnit.csproj", "{0978BDD1-1DE8-4759-99D1-FE408490786C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GRPersonService.NUnit", "GRPersonService.NUnit\GRPersonService.NUnit.csproj", "{A873F4FC-3877-4289-94F5-D656C39D2BD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0978BDD1-1DE8-4759-99D1-FE408490786C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0978BDD1-1DE8-4759-99D1-FE408490786C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0978BDD1-1DE8-4759-99D1-FE408490786C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A873F4FC-3877-4289-94F5-D656C39D2BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A873F4FC-3877-4289-94F5-D656C39D2BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A873F4FC-3877-4289-94F5-D656C39D2BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A873F4FC-3877-4289-94F5-D656C39D2BD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

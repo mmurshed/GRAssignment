@@ -11,11 +11,6 @@ namespace GRAssignment.DataStructure
       List = new List<Person>();
     }
   
-    public Persons(List<Person> List)
-    {
-      this.List = List;
-    }
-
     public void Add(Person person)
     {
       List.Add(person);
@@ -28,12 +23,12 @@ namespace GRAssignment.DataStructure
 
     public void SortByDateOfBirth()
     {
-      List.Sort((x, y) => x.DOB.CompareTo(y.DOB));
+      List.Sort(new DOBComparer());
     }
 
     public void SortByLastName()
     {
-      List.Sort((x, y) => -1 * x.LastName.CompareTo(y.LastName));
+      List.Sort(new NameComparer());
     }
   }
 }

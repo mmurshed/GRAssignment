@@ -18,7 +18,7 @@ namespace GRAssignment.IO
         FirstName: values[1].Trim(),
         Gender: values[2].Trim(),
         FavoriteColor: values[3].Trim(),
-        DOB: Convert.ToDateTime(values[4].Trim())
+        DateOfBirth: values[4].Trim()
       );
       return person;
     }
