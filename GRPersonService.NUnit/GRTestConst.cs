@@ -16,5 +16,10 @@ namespace GRAssignment.GRPersonService.NUnit
     /// The directory containing expected output
     /// </summary>
     public const string EXPECTED_DIR = @"C:\Source\GRAssignment\Expected";
+
+    /// <summary>
+    /// Location of the backup file
+    /// </summary>
+    public const string BACKUPFILE = @"C:\Source\GRAssignment\Input\persons.bak";
   }
 }

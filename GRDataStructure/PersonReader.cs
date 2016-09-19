@@ -1,5 +1,4 @@
-﻿using System;
-using GRAssignment.DataStructure;
+﻿using GRAssignment.DataStructure;
 using System.IO;
 
 namespace GRAssignment.IO
@@ -35,6 +34,26 @@ namespace GRAssignment.IO
     }
 
     /// <summary>
+    /// Read the stream from a given stream reader
+    /// </summary>
+    /// <param name="streamReader">The stream reader to read from</param>
+    /// <param name="delimeter">The delimiter</param>
+    /// <returns>A collection of Persons</returns>
+    public static Persons Read(StreamReader streamReader, char delimeter)
+    {
+      var persons = new Persons();
+
+      while (!streamReader.EndOfStream)
+      {
+        var person = ReadLine(streamReader.ReadLine(), delimeter);
+        persons?.Add(person);
+      }
+      streamReader.Close();
+
+      return persons;
+    }
+
+    /// <summary>
     /// Read a delimited file and create a list of Persons
     /// </summary>
     /// <param name="fileName">The file to read from</param>
@@ -42,18 +61,20 @@ namespace GRAssignment.IO
     /// <returns>A collection of Persons</returns>
     public static Persons ReadFile(string fileName, char delimeter)
     {
-      var persons = new Persons();
+      return Read(new StreamReader(File.OpenRead(fileName)), delimeter);
+    }
 
-      var reader = new StreamReader(File.OpenRead(fileName));
-
-      while (!reader.EndOfStream)
-      {
-        var person = ReadLine(reader.ReadLine(), delimeter);
-        persons?.Add(person);
-      }
-      reader.Close();
-
-      return persons;
+    /// <summary>
+    /// Read a byte content available from a post request
+    /// </summary>
+    /// <param name="content">The content as a byte array</param>
+    /// <param name="delimeter">The delimiter</param>
+    /// <returns>A collection of Persons</returns>
+    public static Persons Read(byte[] content, char delimeter)
+    {
+      var memStream = new MemoryStream(content);
+      var streamReader = new StreamReader(memStream, System.Text.Encoding.UTF8, true);
+      return Read(streamReader, delimeter);
     }
   }
 }

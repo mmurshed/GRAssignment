@@ -29,6 +29,11 @@ namespace GRAssignment.DataStructure
       List.Add(person);
     }
 
+    public void AddRange(IEnumerable<Person> person)
+    {
+      List.AddRange(person);
+    }
+
     /// <summary>
     /// Sort the list by gender
     /// </summary>
