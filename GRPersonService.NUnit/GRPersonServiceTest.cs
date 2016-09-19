@@ -5,6 +5,7 @@ using System.Linq;
 using NUnit.Framework;
 using GRAssignment.IO;
 using System.Net;
+using System.Text;
 using GRAssignment.DataStructure;
 using Newtonsoft.Json;
 
@@ -38,30 +39,48 @@ namespace GRAssignment.GRPersonService.NUnit
 
     private static object[] TestPerson =
     {
-      new object[] {new Person(LastName: "Obama", FirstName: "Barak", Gender: "Male", FavoriteColor: "NavyBlue", DateOfBirth: "8/4/1961") }
+      new object[] {
+@"Obama,Barak,Male,NavyBlue,8/4/1961
+Clinton,Hillary,Female,Pink,10/26/1947" }
     };
   
     [TestCaseSource(nameof(TestPerson))]
-    public static void TestPost(Person person)
+    public static void TestPost(string persons)
     {
       // Arrange
-      var url = new Uri(GRTestConst.URL, "?data=" + PersonWriter.WriteLine(person, ','));
+      // Backup data
+      File.Copy(PersonService.PERSONFILE, GRTestConst.BACKUPFILE, true);
+
+      var url = GRTestConst.URL;
+      byte[] dataByte = Encoding.ASCII.GetBytes(persons); ;
+
       HttpWebRequest POSTRequest = (HttpWebRequest)WebRequest.Create(url);
       POSTRequest.Method = "POST";
       POSTRequest.KeepAlive = false;
       POSTRequest.Timeout = 5000;
-      POSTRequest.ContentLength = 0;
+      POSTRequest.ContentLength = dataByte.Length;
+
+      // Get the request stream
+      Stream POSTstream = POSTRequest.GetRequestStream();
+      // Write the data bytes in the request stream
+      POSTstream.Write(dataByte, 0, dataByte.Length);
 
       // Act
       HttpWebResponse POSTResponse = (HttpWebResponse)POSTRequest.GetResponse();
 
       // Assert
       Assert.IsTrue(POSTResponse.StatusCode == HttpStatusCode.OK);
+
       var personsExpected = PersonReader.ReadFile(PersonService.PERSONFILE, ',');
-      Assert.AreEqual(person, personsExpected.List[personsExpected.List.Count-1]);
+      var newPersons = PersonReader.Read(dataByte, ',');
+      var expectedPos = personsExpected.List.Count - newPersons.List.Count;
+      for (var i = 0; i < newPersons.List.Count; i++)
+      {
+        Assert.AreEqual(newPersons.List[i], personsExpected.List[expectedPos + i]);
+      }
 
       // Restore data from backup
-      File.Copy(@"C:\Source\GRAssignment\Input\persons.bak", PersonService.PERSONFILE, true);
+      File.Copy(GRTestConst.BACKUPFILE, PersonService.PERSONFILE, true);
     }
 
     /// <summary>

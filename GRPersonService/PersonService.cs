@@ -15,11 +15,18 @@ namespace GRAssignment.GRPersonService
     /// </summary>
     public static readonly string PERSONFILE = @"C:\Source\GRAssignment\Input\persons.csv";
 
+    /// <summary>
+    /// IsReusable Property
+    /// </summary>
     bool IHttpHandler.IsReusable
     {
         get { return true; }
     }
 
+    /// <summary>
+    /// ProcessRequest handler
+    /// </summary>
+    /// <param name="context">The HTTP context</param>
     void IHttpHandler.ProcessRequest(HttpContext context)
     {
       try
@@ -81,11 +88,11 @@ namespace GRAssignment.GRPersonService
     /// <param name="context">The HTTP context</param>
     private void CreatePerson(HttpContext context)
     {
-      var data = context.Request["data"];
-      var person = PersonReader.ReadLine(data, ',');
+      byte[] PostData = context.Request.BinaryRead(context.Request.ContentLength);
+      var newPersons = PersonReader.Read(PostData, ',');
 
       var persons = PersonReader.ReadFile(PERSONFILE, ',');
-      persons.Add(person);
+      persons?.AddRange(newPersons?.List);
       PersonWriter.WriteToFile(PERSONFILE, persons, ',');
     }
   }
